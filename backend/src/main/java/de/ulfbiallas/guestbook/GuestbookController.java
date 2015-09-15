@@ -21,8 +21,11 @@ public class GuestbookController {
 
     @RequestMapping(value="/", method=RequestMethod.POST, consumes="application/json")
     Entry createEntry(@RequestBody Entry entry) {
-        entry.setTime(new Date());
-        return guestbookRepository.save(entry);
+        if(entry.getMessage().length() > 1) {
+            entry.setTime(new Date());
+            return guestbookRepository.save(entry);
+        }
+        return null;
     }
 
 }
