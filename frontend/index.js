@@ -7,7 +7,9 @@ var http = require('http')
 var rsvp = require('rsvp')
 var fs = require('fs')
 
-var url = 'http://localhost:8080/'
+var host = process.env.BACKEND_PORT_8080_TCP_ADDR
+var port = process.env.BACKEND_PORT_8080_TCP_PORT
+var url = 'http://'+host+':'+port+'/'
 
 var app = express()
 app.use(bodyParser.json())

@@ -6,9 +6,14 @@ database:
 
 backend:
   build: backend
-  ports:
-   - "8080:8080"
   links:
    - database:db
   environment:
    - DATASOURCE_PASSWORD=dbpw
+
+frontend:
+  build: frontend
+  ports:
+   - "80:80"
+  links:
+   - backend:backend
