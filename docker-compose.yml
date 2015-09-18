@@ -1,0 +1,14 @@
+database:
+  image: mysql:5.6
+  environment:
+   - MYSQL_ROOT_PASSWORD=dbpw
+   - MYSQL_DATABASE=guestbook
+
+backend:
+  build: backend
+  ports:
+   - "8080:8080"
+  links:
+   - database:db
+  environment:
+   - DATASOURCE_PASSWORD=dbpw
