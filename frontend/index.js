@@ -73,8 +73,8 @@ function saveEntry(entry) {
     "message" : entry
   })
   var options = {
-    hostname: 'localhost',
-    port: 8080,
+    hostname: host,
+    port: port,
     path: '/',
     method: 'POST',
     headers: {
