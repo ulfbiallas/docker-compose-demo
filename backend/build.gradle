@@ -21,3 +21,6 @@ dependencies {
     compile 'mysql:mysql-connector-java:5.1.21'
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}
